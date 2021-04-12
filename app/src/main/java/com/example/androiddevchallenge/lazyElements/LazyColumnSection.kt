@@ -54,7 +54,6 @@ fun LazyColumnSection() {
             modifier = Modifier
                 .weight(1F)
         )
-
         Icon(
             Icons.Default.FilterList,
             contentDescription = "Filter",
@@ -132,7 +131,6 @@ private fun PlantCheckbox() {
     val checkedState = remember {
         mutableStateOf(false)
     }
-
     Checkbox(
         checked = checkedState.value,
         onCheckedChange = { isChecked ->

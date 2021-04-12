@@ -45,9 +45,7 @@ fun LazyRowSection() {
             .paddingFromBaseline(32.dp)
             .padding(horizontal = 16.dp),
     )
-
     Spacer(Modifier.height(16.dp))
-
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         modifier = Modifier
@@ -105,9 +103,9 @@ fun RowPreview() {
 @Composable
 fun RowItemPreview() {
     val imageMock = Image(
-        imageResId = com.example.androiddevchallenge.objects.Image.IMAGES[1],
-        name = com.example.androiddevchallenge.objects.Image.IMAGES_NAMES[1],
-        description = com.example.androiddevchallenge.objects.Image.IMAGE_DESCRIPTIONS[1]
+        imageResId = Image.IMAGES[1],
+        name = Image.IMAGES_NAMES[1],
+        description = Image.IMAGE_DESCRIPTIONS[1]
     )
     ImageItemRow(imageMock)
 }

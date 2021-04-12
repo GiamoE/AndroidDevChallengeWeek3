@@ -41,17 +41,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.*
 import com.example.androiddevchallenge.screens.HomeScreen
 import com.example.androiddevchallenge.screens.LoginScreen
+import com.example.androiddevchallenge.screens.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
-    // style variables
-    private val pink100 = Color(android.graphics.Color.parseColor("#FFF1F1"))
-    private val buttonPrimary = Color(android.graphics.Color.parseColor("#3F2C2C"))
-    private val nunitoSansFamily = FontFamily(Font(R.font.nunitosans_light, FontWeight.Light))
-
-    // text variables welcome page
-    private val subtitle1 = "Beautiful home garden solutions"
-    private val login = "Log in"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -66,100 +58,6 @@ class MainActivity : AppCompatActivity() {
     fun MyApp() {
         Surface(color = MaterialTheme.colors.background) {
             AppNavigator()
-        }
-    }
-
-    @Composable
-    fun WelcomeScreen(navController: NavController) {
-        fun navigateToLogin() {
-            try {
-                navController.navigate("login")
-            } catch (e: Exception) {
-
-            }
-        }
-        Box(
-            Modifier
-                .fillMaxSize()
-                .fillMaxWidth()
-                .background(color = pink100)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.light_welcome_bg),
-                contentDescription = "Welcome background leaf white",
-                Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth()
-            )
-            Column(
-                Modifier
-                    .paddingFromBaseline(top = 72.dp)
-                    .fillMaxHeight()
-                    .padding(start = 88.dp)
-                    .fillMaxWidth(),
-                horizontalAlignment = Alignment.End
-            )
-            {
-                Image(
-                    painter = painterResource(id = R.drawable.light_welcome_illos),
-                    contentDescription = "Welcome background leaf dark",
-                    Modifier
-                        .height(500.dp)
-                        .width(300.dp)
-                )
-            }
-            Column(
-                Modifier
-                    .paddingFromBaseline(top = 550.dp)
-                    .padding(start = 70.dp), horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.light_logo),
-                    contentDescription = "Light logo",
-                    Modifier
-                        .width(200.dp)
-                        .height(40.dp)
-                )
-                Spacer(modifier = Modifier.padding(top = 5.dp))
-                Text(
-                    text = subtitle1,
-                    fontFamily = nunitoSansFamily,
-                    color = buttonPrimary
-                )
-            }
-            Column(
-                Modifier
-                    .paddingFromBaseline(top = 650.dp)
-                    .padding(start = 40.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Button(
-                    onClick = {},
-                    Modifier
-                        .paddingFromBaseline(top = 100.dp)
-                        .height(48.dp)
-                        .width(320.dp)
-                        .background(color = Color.White)
-                        .clip(shape = CircleShape),
-                    colors = ButtonDefaults.buttonColors(
-                        contentColor = Color.White,
-                        backgroundColor = buttonPrimary
-                    )
-                ) {
-                    Text(
-                        text = "Create Account",
-                        fontFamily = nunitoSansFamily
-                    )
-                }
-                Spacer(modifier = Modifier.padding(top = 40.dp))
-                Text(
-                    modifier = Modifier.clickable { navigateToLogin() },
-                    text = login,
-                    fontFamily = nunitoSansFamily,
-                    color = buttonPrimary,
-                    fontWeight = FontWeight.Bold,
-                )
-            }
         }
     }
 

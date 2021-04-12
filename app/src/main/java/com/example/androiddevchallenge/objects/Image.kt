@@ -47,5 +47,4 @@ data class Image (
             "This is a description"
         )
     }
-
 }

@@ -17,7 +17,6 @@ import com.example.androiddevchallenge.lazyElements.LazyRowSection
 @Composable
 fun HomeScreen() {
     Scaffold(bottomBar = { BottomBar() }) {
-
         Box(
             Modifier
                 .fillMaxSize()
@@ -29,18 +28,12 @@ fun HomeScreen() {
                     .paddingFromBaseline(top = 40.dp)
                     .fillMaxWidth()
                     .fillMaxHeight()
-
             ) {
                 Spacer(Modifier.height(40.dp))
-
                 Search()
-
                 LazyRowSection()
-
                 Spacer(Modifier.height(40.dp))
-
                 LazyColumnSection()
-
             }
         }
     }

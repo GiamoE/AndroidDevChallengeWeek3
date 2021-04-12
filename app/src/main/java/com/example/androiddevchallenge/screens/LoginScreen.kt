@@ -72,7 +72,6 @@ fun LoginScreen(navControl: NavController) {
                 .fillMaxHeight(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-
         ) {
             Text(
                 text = loginemail,
